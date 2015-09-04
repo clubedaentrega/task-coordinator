@@ -1,0 +1,9 @@
+# Use npm install
+node_modules
+*.log
+
+# Windows
+*.db
+
+# MAC
+.DS_Store
