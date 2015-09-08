@@ -1,6 +1,6 @@
 {
 	"name": "task-coordinator",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"author": "Sitegui <sitegui@sitegui.com.br>",
 	"description": "Schedule a task to run at a fixed interval in at most one of your processes",
 	"main": "./index.js",
