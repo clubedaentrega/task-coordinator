@@ -34,4 +34,7 @@ If, for some reason, the task callback does not call `done()`, the locking mecha
 
 This approach also creates a problem: if the task is still running when the timeout expires, another task instance may start before the previous one completes. This would complete break the assumption of at most one task running.
 
-You can set the desired behaviour with the `timeout` option and monitor violations listening to events `timeout`, `overrun`.
+You can set the desired behaviour with the `timeout` option and monitor violations listening to events `timeout`, `possibleOverrun`.
+
+## Docs
+See generated docs on [github](http://clubedaentrega.github.io/task-coordinator)
