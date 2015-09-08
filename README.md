@@ -37,4 +37,4 @@ This approach also creates a problem: if the task is still running when the time
 You can set the desired behaviour with the `timeout` option and monitor violations listening to events `timeout`, `possibleOverrun`.
 
 ## Docs
-See generated docs on [github](http://clubedaentrega.github.io/task-coordinator/docs)
+See generated docs on [github](http://clubedaentrega.github.io/task-coordinator)
