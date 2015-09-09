@@ -8,7 +8,7 @@ var should = require('should'),
 
 describe('Coordinator', function () {
 	var shouldFinish = true,
-		db, coordinator, task, task2
+		db, coordinator, task
 
 	before(function (done) {
 		mongodb.MongoClient.connect('mongodb://localhost:27017/test', function (err, _db) {
@@ -29,9 +29,9 @@ describe('Coordinator', function () {
 
 	it('should schedule a task', function () {
 		task = coordinator.schedule({
-			name: 'my task 2',
-			interval: 500,
-			timeout: 1e3
+			name: 'my task',
+			interval: 400,
+			timeout: 800
 		}, function (done) {
 			task.stop()
 			if (shouldFinish) {
@@ -66,6 +66,21 @@ describe('Coordinator', function () {
 			task.should.be.equal(_task)
 			done()
 		})
+	})
+
+	it('should not timeout if call task done', function (done) {
+		var timeouted = false,
+			listener = function () {
+				timeouted = true
+			}
+		shouldFinish = true
+		task.start()
+		coordinator.on('timeout', listener)
+		setTimeout(function () {
+			timeouted.should.be.false()
+			coordinator.removeListener('timeout', listener)
+			done()
+		}, 2 * task.timeout)
 	})
 
 	after(function (done) {
