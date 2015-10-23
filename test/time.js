@@ -20,4 +20,14 @@ describe('time', function () {
 	it('should ignore if undefined', function () {
 		should(time()).be.equal(undefined)
 	})
+
+	it('should throw for invalid times', function () {
+		var invalid = [-1, 0.7, 1e40, 'banana', '-1s', '0.1ms', '1e20d']
+		invalid.forEach(function (each) {
+			function check() {
+				time(each)
+			}
+			check.should.throw()
+		})
+	})
 })

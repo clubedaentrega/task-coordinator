@@ -30,8 +30,8 @@ describe('Coordinator', function () {
 	it('should schedule a task', function () {
 		task = coordinator.schedule({
 			name: 'my task',
-			interval: '0.4s',
-			timeout: '0.8s'
+			interval: '0.1s',
+			timeout: '0.2s'
 		}, function (done) {
 			task.stop()
 			if (shouldFinish) {
