@@ -1,0 +1,23 @@
+/*globals describe, it*/
+'use strict'
+
+var time = require('../lib/time'),
+	should = require('should')
+
+describe('time', function () {
+	it('should let numbers through', function () {
+		time(17).should.be.equal(17)
+	})
+
+	it('should parse time string to number', function () {
+		time('17ms').should.be.equal(17)
+		time('17s').should.be.equal(17e3)
+		time('17min').should.be.equal(17 * 60e3)
+		time('17h').should.be.equal(17 * 3600e3)
+		time('17d').should.be.equal(17 * 24 * 3600e3)
+	})
+
+	it('should ignore if undefined', function () {
+		should(time()).be.equal(undefined)
+	})
+})

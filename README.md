@@ -10,14 +10,14 @@ They will coordinate which one runs each time using a mongodb collection
 ```js
 // Create the coordinator using the given mongodb connection
 // (mongoose in not necessary, this lib talks directly with the mongodb driver)
-var coordinator = require('task-coordinator')(mongoose.db)
+var coordinator = require('task-coordinator')(mongoose.connection.db)
 
 // Schedule a task to run every 5s
 // Even if you deploy this to many machines/process, only one
 // of them will execute the callback
 var task = coordinator.schedule({
 	name: 'task name',
-	interval: 5e3
+	interval: '5s' // ms, s, min, h or d
 }, function (done) {
 	// Do something, them call done()
 })
