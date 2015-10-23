@@ -43,6 +43,12 @@ describe('Coordinator', function () {
 		task.stop()
 	})
 
+	it('should provide the next time the task will run', function () {
+		var now = Date.now(),
+			next = Math.ceil((now + 1) / 100) * 100 + 10
+		task.getNext().should.be.eql(new Date(next))
+	})
+
 	it('should execute the task', function (done) {
 		shouldFinish = true
 		task.start()

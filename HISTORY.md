@@ -1,3 +1,6 @@
+# 1.3.0
+* Added: `Task#getNext()` returns the next time a task should run
+
 # 1.2.0
 * Added: accepts strings like '3s' and '10min' to represent time. Valid units are: ms, s, min, h, d
 * Added: `options.offset` to set the offset from whole intervals. With this, one may schedule a task to run every hour when the minutes are 00:17 with `options = {interval: '1h', offset: '17min'}`
