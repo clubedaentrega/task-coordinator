@@ -31,6 +31,7 @@ describe('Coordinator', function () {
 		task = coordinator.schedule({
 			name: 'my task',
 			interval: '0.1s',
+			offset: '0.01s',
 			timeout: '0.2s'
 		}, function (done) {
 			task.stop()

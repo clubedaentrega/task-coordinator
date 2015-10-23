@@ -26,8 +26,12 @@ var task = coordinator.schedule({
 ## How it works
 Each instance tries to insert a document in a collection in mongodb with a unique key in the task name. Only one call will succeed, that one will trigger the callback execution. When the task calls `done()`, that inserted document is removed.
 
+The number of documents in that collection is bounded by the number of tasks scheduled, that is, they do *not* grow indefinitely.
+
 ### Synchronization
 A task scheduled to run every minute will run at 00:00:00Z, 00:01:00Z, 00:02:00Z and so on. That is, to ensure the execution interval, the tasks are run at whole intervals.
+
+You can set how much each task will offset from whole intervals. A task with interval of 1 minute and offset of 5 seconds will run at 00:00:05Z, 00:01:05Z, 00:02:05Z and so on. By default, the offset is zero.
 
 ### Timeout
 If, for some reason, the task callback does not call `done()`, the locking mechanism would prevent the task from ever running again. To solve this problem, a lock may timeout after some time.

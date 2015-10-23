@@ -1,8 +1,7 @@
 /*globals describe, it*/
 'use strict'
 
-var time = require('../lib/time'),
-	should = require('should')
+var time = require('../lib/time')
 
 describe('time', function () {
 	it('should let numbers through', function () {
@@ -17,12 +16,8 @@ describe('time', function () {
 		time('17d').should.be.equal(17 * 24 * 3600e3)
 	})
 
-	it('should ignore if undefined', function () {
-		should(time()).be.equal(undefined)
-	})
-
 	it('should throw for invalid times', function () {
-		var invalid = [-1, 0.7, 1e40, 'banana', '-1s', '0.1ms', '1e20d']
+		var invalid = [undefined, -1, 0.7, 1e40, 'banana', '-1s', '0.1ms', '1e20d']
 		invalid.forEach(function (each) {
 			function check() {
 				time(each)
