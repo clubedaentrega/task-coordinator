@@ -1,4 +1,8 @@
 # Task Coordinator
+[![Build Status](https://travis-ci.org/clubedaentrega/task-coordinator.svg?branch=master)](https://travis-ci.org/clubedaentrega/task-coordinator)
+[![Inline docs](http://inch-ci.org/github/clubedaentrega/task-coordinator.svg?branch=master)](http://inch-ci.org/github/clubedaentrega/task-coordinator)
+[![Dependency Status](https://david-dm.org/clubedaentrega/task-coordinator.svg)](https://david-dm.org/clubedaentrega/task-coordinator)
+
 Schedule a task to run at a fixed interval in at most one of your processes
 
 They will coordinate which one runs each time using a mongodb collection
