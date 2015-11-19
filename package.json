@@ -1,6 +1,6 @@
 {
 	"name": "task-coordinator",
-	"version": "1.3.0",
+	"version": "1.3.1",
 	"author": "Sitegui <sitegui@sitegui.com.br>",
 	"description": "Schedule a task to run at a fixed interval in at most one of your processes",
 	"main": "./index.js",
@@ -27,9 +27,9 @@
 		"docs": "jsdoc -d docs -c docs.json -R README.md -t jaguarjs-jsdoc"
 	},
 	"devDependencies": {
-		"jsdoc": "^3.3.3",
-		"mocha": "^2.3.3",
-		"mongodb": "^2.0.46",
+		"jsdoc": "^3.4.0",
+		"mocha": "^2.3.4",
+		"mongodb": "^2.0.48",
 		"should": "^7.1.1"
 	}
 }

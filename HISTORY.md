@@ -1,3 +1,6 @@
+# 1.3.1
+* Fixed: of-by-one timeout bug
+
 # 1.3.0
 * Added: `Task#getNext()` returns the next time a task should run
 
