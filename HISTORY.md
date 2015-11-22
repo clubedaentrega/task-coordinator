@@ -1,3 +1,6 @@
+# 1.3.2
+* Fixed: bug with running tasks with non-zero offset
+
 # 1.3.1
 * Fixed: of-by-one timeout bug
 
