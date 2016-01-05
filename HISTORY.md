@@ -1,3 +1,9 @@
+# 2.0.0
+
+## Breaking changes
+* Changed: default `timeout` is `interval` (it was `10*interval`)
+* Added: throws if `timeout` or `interval` is bigger than Node's maximum timeout value (~25d)
+
 # 1.3.2
 * Fixed: bug with running tasks with non-zero offset
 
