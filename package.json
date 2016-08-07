@@ -1,6 +1,6 @@
 {
 	"name": "task-coordinator",
-	"version": "2.1.0",
+	"version": "2.1.1",
 	"author": "Sitegui <sitegui@sitegui.com.br>",
 	"description": "Schedule a task to run at a fixed interval in at most one of your processes",
 	"main": "./index.js",
@@ -16,7 +16,7 @@
 		"cron"
 	],
 	"dependencies": {
-		"bson": "^0.5.2"
+		"bson": "^0.4.23"
 	},
 	"license": "MIT",
 	"engines": {
