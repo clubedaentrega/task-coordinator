@@ -40,7 +40,7 @@ You can set how much each task will offset from whole intervals. A task with int
 ### Timeout
 If, for some reason, the task callback does not call `done()`, the locking mechanism would prevent the task from ever running again. To solve this problem, a lock may timeout after some time.
 
-This approach also creates a problem: if the task is still running when the timeout expires, another task instance may start before the previous one completes. This would complete break the assumption of at most one task running.
+This approach also creates a problem: if the task is still running when the timeout expires, another task instance may start before the previous one completes. This would then break the assumption of at most one task running.
 
 You can set the desired behaviour with the `timeout` option and monitor violations listening to events `timeout`, `possibleOverrun`.
 
