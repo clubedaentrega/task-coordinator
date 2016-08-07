@@ -1,3 +1,7 @@
+# 2.1.0
+* Added: `Task#skip(N)` to skip the next `N` executions
+* Added: `Task#backoff(factor=2)` to skip an exponentially increasing number of executions
+
 # 2.0.0
 
 ## Breaking changes
