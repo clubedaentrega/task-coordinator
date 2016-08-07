@@ -55,6 +55,32 @@ describe('Coordinator', function () {
 		ev.once('run', done)
 	})
 
+	it('should skip N executions', function (done) {
+		var then = task.getNext().getTime(),
+			skip = 10
+
+		task.skip(skip)
+
+		task.start()
+		ev.once('run', function () {
+			var diff = Date.now() - then
+			diff.should.be.approximately(skip * task.interval, task.timeout)
+			done()
+		})
+	})
+
+	it('should backoff exponentially executions', function () {
+		task._skipCounter.should.be.equal(0)
+		task.backoff()
+		task._skipCounter.should.be.equal(1)
+		task.backoff(3)
+		task._skipCounter.should.be.equal(3)
+		task.backoff()
+		task._skipCounter.should.be.equal(6)
+		task.skip(0)
+		task._skipCounter.should.be.equal(0)
+	})
+
 	it('should execute the task and timeout', function (done) {
 		shouldFinish = false
 		task.start()
